@@ -1,0 +1,82 @@
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background-color: #FFFFFF;
+    font-size: 16px;
+    margin: 0 0 100px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+    font-family: 'Merriweather', 'Geogria', serif;
+    text-align: center;
+}
+
+.form-group h6{
+    color: #FC645C;
+    display: inline-block;
+}
+
+
+a:link,
+a:visited {
+    color: #92C2DC;
+}
+
+
+
+
+#carousel-example-generic {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 3em;
+}
+
+footer {
+    position: absolute;
+    padding: 10px 0 5px;
+    left: 0;
+    bottom: 0;
+    background-color: #F8F8F8;
+    clear: both;
+    text-align: center;
+    color: black;
+    overflow:hidden;
+    height: 50px;
+    width: 100%;
+}
+
+
+li {
+    opacity: 0.8;
+    text-align: center;
+    font-size: 70%;
+    letter-spacing: 0.1em;
+}
+
+li:hover {
+    color: #FFFFFF;
+    background: white;
+}
+
+
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    
+   
+}
