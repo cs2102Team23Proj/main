@@ -32,8 +32,6 @@ a:visited {
 }
 
 
-
-
 #carousel-example-generic {
     width: 90%;
     margin: auto;
@@ -67,6 +65,10 @@ li:hover {
     background: white;
 }
 
+.wrap {
+    padding-left: 20%;
+    padding-right: 20%;
+}
 
 
 /* Small devices (tablets, 768px and up) */
