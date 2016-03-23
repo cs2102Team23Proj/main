@@ -26,7 +26,6 @@ p{
 }
 
 
-a:link,
 a:visited {
     color: #92C2DC;
 }
@@ -71,14 +70,72 @@ li:hover {
 }
 
 
-/* Small devices (tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    
-
+.guide-container {
+    margin-top: 0;
+    width: 40%;
+    max-width: 200px;
+    top: 55px;
+    bottom: 70px;
+    position: absolute;
+    overflow:hidden;
+    background-color: #F8F8F8;
+}
+.guide-container a {
+    color: black;
+}
+.guide-container h3 {
+    text-align: left;
+    padding-left: 10px;
+}
+.guide-container ul {
+    text-align: left;
 }
 
-/* Medium devices (desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    
-   
+.admin-manage {
+    padding-left: 250px;
+    padding-right: 50px;
 }
+
+.admin-manage h3 {
+    text-align: left;
+}
+
+.table {
+    padding-top: 2%;
+}
+
+#carousel-example-generic {
+    max-width: 60%;
+    z-index: -2;
+}
+
+.project-list {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.project-list h3 {
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
