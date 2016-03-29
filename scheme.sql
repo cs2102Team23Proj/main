@@ -47,3 +47,9 @@ FOREIGN KEY (funder_name) REFERENCES funder(name) ON UPDATE CASCADE,
 FOREIGN KEY (project_id) REFERENCES project(id) ON UPDATE CASCADE,
 CHECK (amount > 0)
 );
+
+Insert into entrepreneur (name, password) values ('entrepreneur1', '1');
+Insert into entrepreneur (name, password) values ('entrepreneur2', '2');
+Insert into entrepreneur (name, password) values ('entrepreneur3', '3');
+Insert into entrepreneur (name, password) values ('entrepreneur4', '4');
+Insert into entrepreneur (name, password) values ('entrepreneur5', '5');
