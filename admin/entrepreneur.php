@@ -29,12 +29,10 @@ $result = pg_query($query) or die('Query failed: ' . pg_last_error());
           while ($row = pg_fetch_row($result)){
             echo "</tr>";
             echo "<td>" . $row[0] . "</td>";
-          ?>
-            <td>
-              <a href=#><button type="button" class="btn btn-primary">Edit</button></a>
-              <a href=#><button type="button" class="btn btn-danger">Delete</button></a>
-            </td>
-          <?php echo "</tr>";   
+            echo '<td>';
+            echo '<a href="delete_entrepreneur.php?name=' . $row[0] . '"><button type="button" class="btn btn-danger">Delete</button></a>';
+            echo '</td>';
+            echo "</tr>";
           }?>
         </tbody>
       </table>
