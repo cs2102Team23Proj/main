@@ -5,7 +5,7 @@ if(isset($_POST['btn-signup'])){
   $name = pg_escape_string($_POST['name']);
   $password = pg_escape_string($_POST['password']);
   $hash = password_hash($password, PASSWORD_DEFAULT);
-  $query = "INSERT INTO funder (name, password) VALUES ('" . $name . "', '" . $hash . "');";
+  $query = "INSERT INTO entrepreneur (name, password) VALUES ('" . $name . "', '" . $hash . "');";
   pg_query($query);
   header("Location: index.php");
 }
@@ -24,8 +24,8 @@ if(isset($_POST['btn-signup'])){
   ?>
 
   <div>
-    <h2>Create User Account</h2>
-    <h4><a href="sign_up_entrepreneur.php">Entrepreneur sign up?</a></h4>
+    <h2>Create Entrepreneur Account</h2>
+    <h4><a href="sign_up.php">User sign up?</a></h4>
     <div class="wrap">
       <form method="post" action="">
         <div class="form-group">
