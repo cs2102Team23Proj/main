@@ -33,7 +33,7 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <!-- 这里应该也要要用逻辑写吧 就是login的名字-->
-        <li><a href="createAccount.html">Sign up</a></li>
+        <li><a href="sign_up.php">Sign up</a></li>
         <li><a href="login.html">Sign in</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
