@@ -1,5 +1,5 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>起不出名字</title>
+
 <script src="js/jquery-1.10.2.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 
