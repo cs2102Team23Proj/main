@@ -8,7 +8,7 @@ $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 <html>
 
 <head>
-   <title>Manage Entrepreneurs</title>
+   <title>Manage Funders</title>
    <?php require $_SERVER['DOCUMENT_ROOT'] . '/head.php';?>
 </head>
 
