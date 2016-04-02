@@ -1,6 +1,6 @@
 <?php 
 include_once '../db_connect.php';
-$query = "SELECT name FROM funder";
+$query = "SELECT name, email FROM funder";
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 ?>
 
