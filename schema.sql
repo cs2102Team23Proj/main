@@ -1,10 +1,10 @@
-DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS funder;
 DROP TABLE IF EXISTS entrepreneur;
 DROP TABLE IF EXISTS admin;
 DROP TABLE IF EXISTS fund;
 DROP TABLE IF EXISTS project;
 
-CREATE TABLE user(
+CREATE TABLE funder(
 name VARCHAR(255) PRIMARY KEY,
 password VARCHAR(255) NOT NULL,
 email VARCHAR(255) NOT NULL UNIQUE
@@ -40,7 +40,7 @@ CHECK (end_date > start_date)
 
 
 CREATE TABLE fund (
-user_name VARCHAR(255) REFERENCES user(name) ON UPDATE CASCADE,
+funder_name VARCHAR(255) REFERENCES funder(name) ON UPDATE CASCADE,
 project_title VARCHAR(255) REFERENCES project(title) ON UPDATE CASCADE,
 amount FLOAT,
 CHECK (amount > 0) 

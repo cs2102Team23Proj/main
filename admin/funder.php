@@ -1,6 +1,6 @@
 <?php 
 include_once '../db_connect.php';
-$query = "SELECT name FROM user";
+$query = "SELECT name FROM funder";
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 ?>
 
@@ -8,7 +8,7 @@ $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 <html>
 
 <head>
-   <title>Manage Users</title>
+   <title>Manage Funders</title>
    <?php require $_SERVER['DOCUMENT_ROOT'] . '/head.php';?>
 </head>
 
@@ -16,12 +16,12 @@ $result = pg_query($query) or die('Query failed: ' . pg_last_error());
   <?php require 'sidebar.php';?>
 
   <div class="admin-manage">
-    <h3>User list</h3>
+    <h3>Funder list</h3>
     <div class="table">
       <table class="table table-hover table-bordered">
         <thead>
           <tr>
-            <th>User Name</th>
+            <th>Funder Name</th>
             <th>Actions</th>
           </tr>
         </thead>
