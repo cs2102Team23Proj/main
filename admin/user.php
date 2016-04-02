@@ -16,7 +16,7 @@ $result = pg_query($query) or die('Query failed: ' . pg_last_error());
   <?php require 'sidebar.php';?>
 
   <div class="admin-manage">
-    <h3>Funder list</h3>
+    <h3>User list</h3>
     <div class="table">
       <table class="table table-hover table-bordered">
         <thead>
