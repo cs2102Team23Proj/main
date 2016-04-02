@@ -31,7 +31,8 @@ $result = pg_query($query) or die('Query failed: ' . pg_last_error());
             echo "</tr>";
             echo "<td>" . $row[0] . "</td>";
             echo '<td>';
-            echo '<a href="delete_entrepreneur.php?name=' . $row[0] . '"><button type="button" class="btn btn-danger">Delete</button></a>';
+            echo '<a href=#><button type="button" class="btn btn-primary">Edit</button></a>';
+            echo '<a href="delete_funder.php?name=' . $row[0] . '"><button type="button" class="btn btn-danger">Delete</button></a>';
             echo '</td>';
             echo "</tr>";
           }?>
