@@ -22,6 +22,7 @@ $result = pg_query($query) or die('Query failed: ' . pg_last_error());
         <thead>
           <tr>
             <th>Funder Name</th>
+            <th>Funder Email</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -30,6 +31,7 @@ $result = pg_query($query) or die('Query failed: ' . pg_last_error());
           while ($row = pg_fetch_row($result)){
             echo "</tr>";
             echo "<td>" . $row[0] . "</td>";
+            echo "<td>" . $row[1] . "</td>";
             echo '<td>';
             echo '<a href="edit_funder.php?name=' .$row[0]. '&email=' . $row[1] . '"><button type="button" class="btn btn-primary">Edit</button></a>';
             echo '<a href="delete_funder.php?name=' . $row[0] . '"><button type="button" class="btn btn-danger">Delete</button></a>';
