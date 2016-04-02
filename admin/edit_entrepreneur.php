@@ -6,7 +6,7 @@ include_once '../db_connect.php';
 <html>
 
 <head>
-   <title>Edit Funders</title>
+   <title>Edit Entrepreneurs</title>
    <?php require $_SERVER['DOCUMENT_ROOT'] . '/head.php';?>
 </head>
 
@@ -14,16 +14,16 @@ include_once '../db_connect.php';
   <?php require 'sidebar.php';?>
 
   <div class="admin-manage">
-    <h3>Edit Funder Information</h3>
+    <h3>Edit Entrepreneur Information</h3>
     <div class="wrap">
       <form method="post" action="" onsubmit="return validate()">
         <div class="form-group">
           <label for="input-name">Name</label>
-          <input id="input-name" name="name" type="text" class="form-control" placeholder= <?php echo $_GET["name"];?> >
+          <input id="input-name" name="name" type="text" class="form-control" placeholder= <?php echo $_GET["name"];?>>
         </div>
         <div class="form-group">
           <label for="input-email">Email</label>
-          <input id="input-email" name="email" type="text" class="form-control" placeholder=<?php echo $_GET["email"];?>>
+          <input id="input-email" name="email" type="text" class="form-control" placeholder= <?php echo $_GET["email"];?>>
         </div>
         <button name="btn-signup" type="submit" class="btn btn-default">Confirm</button>
       </form>
