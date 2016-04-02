@@ -1,6 +1,6 @@
-INSERT INTO entrepreneur VALUES ('growup', 'growup','growup@growup.com');
-INSERT INTO entrepreneur VALUES ('green', 'green','green@green.com');
-INSERT INTO entrepreneur VALUES ('singout', 'singout','singout@singout.com');
-INSERT INTO entrepreneur VALUES ('startup', 'startup','startup@startup.com');
+INSERT INTO entrepreneur VALUES ('growup@growup.com', 'growup','growup');
+INSERT INTO entrepreneur VALUES ('green@green.com', 'green','green');
+INSERT INTO entrepreneur VALUES ('singout@singout.com', 'singout','singout');
+INSERT INTO entrepreneur VALUES ('startup@startup.com', 'startup','startup');
 
 

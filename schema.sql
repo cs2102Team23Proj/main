@@ -7,16 +7,16 @@ DROP TABLE IF EXISTS admin;
 
 
 CREATE TABLE funder(
-name VARCHAR(255) PRIMARY KEY,
+email VARCHAR(255) PRIMARY KEY,
 password VARCHAR(255) NOT NULL,
-email VARCHAR(255) NOT NULL UNIQUE
+name VARCHAR(255) NOT NULL UNIQUE
 );
 
 
 CREATE TABLE entrepreneur (
-name VARCHAR(255) PRIMARY KEY,
+email VARCHAR(255) PRIMARY KEY,
 password VARCHAR(255) NOT NULL,
-email VARCHAR(255) NOT NULL UNIQUE
+name VARCHAR(255) NOT NULL UNIQUE
 );
 
 
@@ -36,14 +36,14 @@ category VARCHAR(255) NOT NULL,
 target_amount INT NOT NULL,
 current_amount INT DEFAULT 0,
 status BOOLEAN DEFAULT TRUE,
-FOREIGN KEY (owner) REFERENCES entrepreneur(name) ON UPDATE CASCADE ON DELETE CASCADE,
+FOREIGN KEY (owner) REFERENCES entrepreneur(email) ON UPDATE CASCADE ON DELETE CASCADE,
 CHECK (target_amount > 0),
 CHECK (end_date > start_date)
 );
 
 
 CREATE TABLE fund (
-funder_name VARCHAR(255) REFERENCES funder(name) ON UPDATE CASCADE,
+funder_email VARCHAR(255) REFERENCES funder(email) ON UPDATE CASCADE,
 project_title VARCHAR(255) REFERENCES project(title) ON UPDATE CASCADE,
 amount INT,
 CHECK (amount > 0) 

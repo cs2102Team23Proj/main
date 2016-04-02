@@ -1,5 +1,5 @@
-INSERT INTO funder VALUES ('buwei', 'buwei','buwei@gmail.com');
-INSERT INTO funder VALUES ('lyuan', 'lyuan','lyuan@gmail.com');
-INSERT INTO funder VALUES ('zanzan', 'zanzan','zanzan@gmail.com');
-INSERT INTO funder VALUES ('yuxin', 'yuxin','yuxin@gmail.com');
-INSERT INTO funder VALUES ('dajieda', 'dajieda','dajieda@gmail.com');
+INSERT INTO funder VALUES ('buwei@gmail.com', 'buwei','buwei');
+INSERT INTO funder VALUES ('lyuan@gmail.com', 'lyuan','lyuan');
+INSERT INTO funder VALUES ('zanzan@gmail.com', 'zanzan','zanzan');
+INSERT INTO funder VALUES ('yuxin@gmail.com', 'yuxin','yuxin');
+INSERT INTO funder VALUES ('dajieda@gmail.com', 'dajieda','dajieda');
