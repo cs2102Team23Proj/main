@@ -1,8 +1,10 @@
-DROP TABLE IF EXISTS funder;
-DROP TABLE IF EXISTS entrepreneur;
-DROP TABLE IF EXISTS admin;
 DROP TABLE IF EXISTS fund;
 DROP TABLE IF EXISTS project;
+DROP TABLE IF EXISTS entrepreneur;
+DROP TABLE IF EXISTS funder;
+DROP TABLE IF EXISTS admin;
+
+
 
 CREATE TABLE funder(
 name VARCHAR(255) PRIMARY KEY,
@@ -33,6 +35,7 @@ end_date DATE NOT NULL,
 category VARCHAR(255) NOT NULL, 
 target_amount INT NOT NULL,
 current_amount INT DEFAULT 0,
+status BOOLEAN DEFAULT TRUE,
 FOREIGN KEY (owner) REFERENCES entrepreneur(name) ON UPDATE CASCADE ON DELETE CASCADE,
 CHECK (target_amount > 0),
 CHECK (end_date > start_date)
@@ -42,7 +45,7 @@ CHECK (end_date > start_date)
 CREATE TABLE fund (
 funder_name VARCHAR(255) REFERENCES funder(name) ON UPDATE CASCADE,
 project_title VARCHAR(255) REFERENCES project(title) ON UPDATE CASCADE,
-amount FLOAT,
+amount INT,
 CHECK (amount > 0) 
 );
 
