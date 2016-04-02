@@ -32,7 +32,7 @@ start_date DATE NOT NULL,
 end_date DATE NOT NULL,
 category VARCHAR(255) NOT NULL, 
 target_amount INT NOT NULL,
-current_amount INT DEFULT 0,
+current_amount INT DEFAULT 0,
 FOREIGN KEY (owner) REFERENCES entrepreneur(name) ON UPDATE CASCADE ON DELETE CASCADE,
 CHECK (target_amount > 0),
 CHECK (end_date > start_date)
