@@ -1,25 +1,35 @@
 <?php 
+session_start();
+
 include_once 'db_connect.php';
 
 if (isset($_POST['btn-signup'])) {
   $name = pg_escape_string($_POST['name']);
+  $email = pg_escape_string($_POST['email']);
 
-  //check for duplicate names
-  $duplicate_names = pg_query("SELECT * FROM funder WHERE name='$name'");
-  if (pg_num_rows($duplicate_names)>=1) {
+  //check for duplicate name and email
+  $duplicate_emails = pg_query("SELECT * FROM funder WHERE email='$email'");
+  if (pg_num_rows($duplicate_emails)>=1) {
     ?>
-    <script>alert('Name is taken. Please try another name.');</script>
+    <script>alert('The email address is already registered.');</script>
     <?php
   } else {
-    $password = pg_escape_string($_POST['password']);
-    $hash = password_hash($password, PASSWORD_DEFAULT);
-    $query = "INSERT INTO funder (name, password) VALUES ('" . $name . "', '" . $hash . "');";
-    if(pg_query($query)){
-      header("Location: sign_up_success.php");
-    } else {
+    $duplicate_names = pg_query("SELECT * FROM funder WHERE name='$name'");
+    if (pg_num_rows($duplicate_names)>=1) {
       ?>
-      <script>alert('Error while registering you. Please try again.');</script>
+      <script>alert('The user name is taken. Please try another name.');</script>
       <?php
+    } else {
+      $password = pg_escape_string($_POST['password']);
+      $hash = password_hash($password, PASSWORD_DEFAULT);
+      $query = "INSERT INTO funder (email, name, password) VALUES ('" . $email . "', '" . $name . "', '" . $hash . "');";
+      if(pg_query($query)){
+        header("Location: sign_up_success.php");
+      } else {
+        ?>
+        <script>alert('Error while registering you. Please try again.');</script>
+        <?php
+      }
     }
   }
 }
@@ -52,7 +62,11 @@ if (isset($_POST['btn-signup'])) {
     <h2>Create User Account</h2>
     <h4><a href="sign_up_entrepreneur.php">Entrepreneur sign up?</a></h4>
     <div class="wrap">
-      <form method="post" action="" onsubmit="return validate()">
+      <form method="post" onsubmit="return validate()">
+        <div class="form-group">
+          <label for="input-email">Email Address *</label>
+          <input id="input-email" name="email" type="email" class="form-control" placeholder="Email" required>
+        </div>
         <div class="form-group">
           <label for="input-name">Name *</label>
           <input id="input-name" name="name" type="text" class="form-control" placeholder="User Name" required>
