@@ -13,7 +13,7 @@ session_start();
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php">起名字啊啊</a>
+      <a class="navbar-brand" href="index.php">Fund Together</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
