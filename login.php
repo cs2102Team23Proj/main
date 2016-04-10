@@ -8,7 +8,7 @@ if (isset($_POST['btn-login'])) {
   $password = pg_escape_string($_POST['password']);
   $domain = pg_escape_string($_POST['domain']);
 
-  if ($domain==="user") {
+  if ($domain==="funder") {
     $result = pg_query("SELECT email, name, password FROM funder WHERE email='$email'");
     if (pg_num_rows($result)==1) {
       $row = pg_fetch_row($result);
@@ -76,7 +76,7 @@ function auth_fail() {
       <div class="form-group">
         <label for="">Login As:</label>
         <div class="radio">
-          <label><input type="radio" name="domain" value="user" checked>User</label>
+          <label><input type="radio" name="domain" value="funder" checked>User</label>
         </div>
         <div class="radio">
           <label><input type="radio" name="domain" value="entrepreneur">Entrepreneur</label>

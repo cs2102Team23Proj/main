@@ -35,7 +35,7 @@ if (isset($_SESSION['domain'])) {
           while ($row = pg_fetch_row($result)){
             echo "</tr>";
             echo "<td>" . $row[0] . "</td>";
-            echo "<td>" . $row[2] . ／. $row[1] . "</td>";
+            echo "<td>" . $row[3] . "/" . $row[2] . "</td>";
 
             echo "</tr>";
           }?>

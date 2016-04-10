@@ -12,6 +12,10 @@ if (isset($_GET['title'])) {
   if (isset($_POST['btn-donate'])) {
     $amount = pg_escape_string($_POST['amount']);
     $query_project = "UPDATE project SET current_amount = $amount + current_amount WHERE title = '" . $_GET['title'] . "'";
+    if ($_SESSION['domain'] === 'funder') {
+      pg_query("INSERT INTO fund (funder_email, project_title, amount) 
+                VALUES ('" . $_SESSION['email'] . "', '" . $_GET['title'] . "', '" . $amount . "');");
+    }
     if (pg_query($query_project)) {
       header("Location: project_list.php?message=" . urlencode("Thanks for your donation!"));
     } else {
@@ -19,10 +23,7 @@ if (isset($_GET['title'])) {
       <script>alert("error")</script>
       <?php
     }
-    // if ($_SESSION['domain'] === 'user') {
-    //   pg_query("INSERT INTO fund (funder_email, project_title, amount) 
-    //             VALUES ('" . $_SESSION['email'] . "', '" . $name . "', '" . $hash . "');");
-    // }
+
 
   }
 }
@@ -43,7 +44,7 @@ if (isset($_GET['title'])) {
   <?php 
   echo "<p>You are donating to: " . $row[0] . "</p>";
   echo "<p>Goal: \$" . $row[3] . "</p>";
-  echo "<p>Remaining amount: \$" . ($row[3] - $row[2]) . "</p>";
+  echo "<p>Currently received: \$" . $row[2] . "</p>";
   ?>
   <form method="post">
     <div class="form-group">

@@ -41,12 +41,13 @@ session_start();
       <ul class="nav navbar-nav navbar-right">
       <?php 
       if (isset($_SESSION['domain'])&&($_SESSION['domain'])=="funder") {
-        echo "<li><a href='user_profile.php'>" . $_SESSION['name'] . ", " . $_SESSION['domain'] . "</a></li>";
+        echo "<li><a href='user_profile.php'>" . $_SESSION['name'] . ", user</a></li>";
         echo "<li><a href='logout.php'>Log Out</a></li>";
       } else if (isset($_SESSION['domain'])&&($_SESSION['domain'])=="entrepreneur") {
+        echo "<li><a href='create_project.php'>Create Project</a></li>";
         echo "<li><a href='entrepreneur_profile.php'>" . $_SESSION['name'] . ", " . $_SESSION['domain'] . "</a></li>";
         echo "<li><a href='logout.php'>Log Out</a></li>";
-      }  else {
+      } else {
         echo "<li><a href='login.php'>Log In</a></li>";
         echo "<li><a href='sign_up.php'>Sign Up</a></li>";
       }
