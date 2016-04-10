@@ -1,7 +1,20 @@
 <?php 
+
+session_start();
+
 include_once 'db_connect.php';
+
+if (isset($_GET['category'])) {
+  $query = "SELECT title, category, current_amount, target_amount FROM project WHERE status = true AND category = '" . $_GET['category'] . "';";
+  $result = pg_query($query);
+
+} 
+
+else {
 $query = "SELECT title, category, current_amount, target_amount FROM project WHERE status = true";
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
+}
+
 ?>
 
 <!DOCTYPE html>
