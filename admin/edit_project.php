@@ -11,19 +11,25 @@ if (isset($_GET['title'])) {
 } 
 
 if (isset($_POST['btn-confirm'])) {
-  $title = pg_escape_string($_POST['title']);
-  $owner = pg_escape_string($_GET['owner']);
-  $email = pg_escape_string($_GET['category']);
-  $email = pg_escape_string($_GET['start_date']);
-  $email = pg_escape_string($_GET['end_date']);
-  $email = pg_escape_string($_GET['target_amount']);
-  $email = pg_escape_string($_GET['current_amount']);
-  $email = pg_escape_string($_GET['status']);
-  $email = pg_escape_string($_GET['description']);
+  $title = pg_escape_string($_GET['title']);
+  $owner = pg_escape_string($_POST['owner']);
+  $category = pg_escape_string($_POST['category']);
+  $start_date = pg_escape_string($_POST['start_date']);
+  $end_date = pg_escape_string($_POST['end_date']);
+  $target_amount= pg_escape_string($_POST['target_amount']);
+  $current_amount = pg_escape_string($_POST['current_amount']);
+  $status = pg_escape_string($_POST['status']);
+  $description = pg_escape_string($_POST['description']);
 
-    $query = "UPDATE project SET owner='$owner', category='$category', start_date='$start_date', end_date='$end_date', target_amount ='$target_amount' , current_amount='$current_amount', statuts='$status', description ='$description' WHERE title = '$title'";
-    pg_query($query);
-    header("Location: project.php");
+    $query = "UPDATE project SET owner='$owner', category='$category', start_date='$start_date', end_date='$end_date', target_amount ='$target_amount' , current_amount='$current_amount', status='$status', description ='$description' WHERE title = '$title'";
+   if(pg_query($query)) {
+      header("Location: project.php"); 
+   
+    } else {
+        ?>
+        <script>alert('Error');</script>
+        <?php
+      }
   }
 
 ?>
@@ -48,21 +54,21 @@ if (isset($_POST['btn-confirm'])) {
           <input id="input-title" name="title" class="form-control" value = "<?php echo $_GET["title"];?>" placeholder= <?php echo $_GET["title"];?> >
 
           <label for="input-owner">Owner</label>
-          <input id="input-owner" name="owner" type="text" class="form-control" value=<?php echo '"' . $row[0] . '"';?> >
+          <input id="input-owner" name="owner" type="text" class="form-control" value=<?php echo '"' . $row[1] . '"';?> >
           <label for="input-category">Category</label>
-          <input id="input-category" name="category" type="text" class="form-control" value=<?php echo '"' . $row[1] . '"';?> >
+          <input id="input-category" name="category" type="text" class="form-control" value=<?php echo '"' . $row[2] . '"';?> >
           <label for="input-start_date">Start Date</label>
-          <input id="input-start_date" name="start_date" type="text" class="form-control" value=<?php echo '"' . $row[2] . '"';?> >
+          <input id="input-start_date" name="start_date" type="text" class="form-control" value=<?php echo '"' . $row[3] . '"';?> >
           <label for="input-end_date">End Date</label>
-          <input id="input-end_date" name="end_date" type="text" class="form-control" value=<?php echo '"' . $row[3] . '"';?> >
+          <input id="input-end_date" name="end_date" type="text" class="form-control" value=<?php echo '"' . $row[4] . '"';?> >
           <label for="input-target_amount">Target Amount</label>
-          <input id="input-target_amount" name="target_amount" type="text" class="form-control" value=<?php echo '"' . $row[4] . '"';?> >
+          <input id="input-target_amount" name="target_amount" type="text" class="form-control" value=<?php echo '"' . $row[5] . '"';?> >
           <label for="input-current_amount">Current Amount</label>
-          <input id="input-current_amount" name="current_amount" type="text" class="form-control" value=<?php echo '"' . $row[5] . '"';?> >
+          <input id="input-current_amount" name="current_amount" type="text" class="form-control" value=<?php echo '"' . $row[6] . '"';?> >
           <label for="input-status">Status</label>
-          <input id="input-status" name="status" type="text" class="form-control" value=<?php echo '"' . $row[6] . '"';?> >
+          <input id="input-status" name="status" type="text" class="form-control" value=<?php echo '"' . $row[7] . '"';?> >
           <label for="input-description">Description</label>
-          <input id="input-description" name="description" type="text" class="form-control" value=<?php echo '"' . $row[7] . '"';?> >
+          <input id="input-description" name="description" type="text" class="form-control" value=<?php echo '"' . $row[8] . '"';?> >
 
         </div>
         <button name="btn-confirm" type="submit" class="btn btn-primary">Confirm</button>
