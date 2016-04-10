@@ -4,6 +4,10 @@ session_start();
 
 include_once 'db_connect.php';
 
+if (isset($_GET['message'])) {
+  echo '<script>alert("' . $_GET['message'] . '")</script>';
+}
+
 if (isset($_GET['category'])) {
   $query = "SELECT title, category, current_amount, target_amount FROM project WHERE status = true AND category = '" . $_GET['category'] . "';";
   $result = pg_query($query);
