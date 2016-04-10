@@ -38,7 +38,7 @@ function auth_fail() {
 
 <body>
 
-
+<h1>Admininistrator Login</h1>
   <div class="wrap">
     <form method="post">
       <div class="form-group">
