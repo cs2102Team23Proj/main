@@ -25,10 +25,10 @@ session_start();
           <ul class="dropdown-menu">
             <li><a href="project_list.php">All Projects</a></li>
             <li class="divider"></li>
-            <li><a href="#">Arts</a></li>
-            <li><a href="#">Education</a></li>
-            <li><a href="#">Environment</a></li>
-            <li><a href="#">Technology</a></li>
+            <li><a href="project_list.php?category=arts">Arts</a></li>
+            <li><a href="project_list.php?category=education">Education</a></li>
+            <li><a href="project_list.php?category=environment">Environment</a></li>
+            <li><a href="project_list.php?category=technology">Technology</a></li>
           </ul>
         </li>
       </ul>

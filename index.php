@@ -7,7 +7,7 @@ include_once 'db_connect.php';
 <html>
 
 <head>
-  <title>TITLE!!!</title>
+  <title>Fund Together</title>
   <?php require 'head.php';?>
 </head>
 
