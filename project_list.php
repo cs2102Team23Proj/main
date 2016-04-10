@@ -8,6 +8,12 @@ if (isset($_GET['category'])) {
   $query = "SELECT title, category, current_amount, target_amount FROM project WHERE status = true AND category = '" . $_GET['category'] . "';";
   $result = pg_query($query);
 
+}
+
+else if (isset($_GET['search'])) {
+  $query = "SELECT title, category, current_amount, target_amount FROM project WHERE status = true AND title like '%".$_GET['search']."%'";
+  $result = pg_query($query);
+
 } 
 
 else {

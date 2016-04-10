@@ -3,6 +3,8 @@ session_start();
 
 ?>
 
+
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -32,9 +34,9 @@ session_start();
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
+      <form action = "project_list.php" method = "get" class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Find Project">
+          <input type="text" name = "search" class="form-control" placeholder="Find Project">
         </div>
         <button type="submit" class="btn btn-default">Find</button>
       </form>
