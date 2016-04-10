@@ -3,8 +3,6 @@ session_start();
 
 ?>
 
-
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -42,10 +40,13 @@ session_start();
       </form>
       <ul class="nav navbar-nav navbar-right">
       <?php 
-      if (isset($_SESSION['domain'])) {
-        echo "<li><a href='my_profile.php'>" . $_SESSION['name'] . ", " . $_SESSION['domain'] . "</a></li>";
+      if (isset($_SESSION['domain'])&&($_SESSION['domain'])=="funder") {
+        echo "<li><a href='user_profile.php'>" . $_SESSION['name'] . ", " . $_SESSION['domain'] . "</a></li>";
         echo "<li><a href='logout.php'>Log Out</a></li>";
-      } else {
+      } else if (isset($_SESSION['domain'])&&($_SESSION['domain'])=="entrepreneur") {
+        echo "<li><a href='entrepreneur_profile.php'>" . $_SESSION['name'] . ", " . $_SESSION['domain'] . "</a></li>";
+        echo "<li><a href='logout.php'>Log Out</a></li>";
+      }  else {
         echo "<li><a href='login.php'>Log In</a></li>";
         echo "<li><a href='sign_up.php'>Sign Up</a></li>";
       }
