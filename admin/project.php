@@ -47,7 +47,7 @@ $result = pg_query($query) or die('Query failed: ' . pg_last_error());
             echo "<td>" . $row[7] . "</td>";
             echo "<td>" . $row[8] . "</td>";
             echo '<td>';
-            echo '<a href="edit_project.php?title=' .$row[0]. '&owner=' . $row[1] . '&category=' . $row[2] . '&start_date=' . $row[3] . '&end_date=' . $row[4] . '&tartget_amount=' . $row[5] . '&current_amount=' . $row[6] . '&status=' . $row[7] . '&description=' . $row[8] . '"><button type="button" class="btn btn-primary">Edit</button></a>';
+            echo '<a href="edit_project.php?title=' .$row[0]. '"><button type="button" class="btn btn-primary">Edit</button></a>';
             echo '<a href="delete_project.php?title=' . $row[0] . '"><button type="button" class="btn btn-danger">Delete</button></a>';
             echo '</td>';
             echo "</tr>";

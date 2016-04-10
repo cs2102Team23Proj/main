@@ -44,8 +44,12 @@ if (isset($_POST['btn-confirm'])) {
     <div class="wrap">
       <form method="post">
         <div class="form-group">
+          <label for="input-email">Email (cannot be changed)</label>
+          <input id="input-email" name="email" class="form-control" value = "<?php echo $_GET["email"];?>" placeholder= <?php echo $_GET["email"];?> >
           <label for="input-name">Name</label>
+
           <input id="input-name" name="name" type="text" class="form-control" value=<?php echo '"' . $row[0] . '"';?> >
+
         </div>
         <button name="btn-confirm" type="submit" class="btn btn-primary">Confirm</button>
       </form>
