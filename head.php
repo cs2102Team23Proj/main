@@ -1,6 +1,5 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script src="js/jquery-1.10.2.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 
 <!-- Latest compiled and minified CSS -->
@@ -11,6 +10,6 @@
 
 <link href='https://fonts.googleapis.com/css?family=Merriweather|Didact+Gothic' rel='stylesheet' type='text/css'>
 
-<script src="main.js"></script>
+<script src="/main.js"></script>
 <link href="/styles.css" rel="stylesheet" type="text/css">
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->

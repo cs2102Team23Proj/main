@@ -23,6 +23,8 @@ session_start();
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PROJECT<span class="caret"></span></a>
           <ul class="dropdown-menu">
+            <li><a href="project_list.php">All Projects</a></li>
+            <li class="divider"></li>
             <li><a href="#">Arts</a></li>
             <li><a href="#">Education</a></li>
             <li><a href="#">Environment</a></li>
